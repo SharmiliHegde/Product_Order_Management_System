@@ -20,13 +20,6 @@ public class User {
 	private String name;
 	private String brandname;
 	private String category;
-	
-
-	/*
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category categorys;
-    */
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<User> products;
