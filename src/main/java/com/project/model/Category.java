@@ -16,17 +16,11 @@ import javax.persistence.Table;
 @Table(name = "categories")
 public class Category {
 	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
-
-    /*
-     * @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<User> products;
-    */
-    
+	
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category categorys;
